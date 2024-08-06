@@ -46,6 +46,7 @@ Frame.BorderColor3 = Color3.fromRGB(49, 49, 49)
 Frame.BorderSizePixel = 0
 Frame.Position = UDim2.new(0.292992979, 0, 0.244325772, 0)
 Frame.Size = UDim2.new(0, 336, 0, 201)
+Frame.Visible = false
 
 UICorner.Parent = Frame
 
@@ -349,32 +350,7 @@ UICorner_4.Parent = Closed
 
 -- Scripts:
 
-local function RGFX_fake_script() -- SpeedShotButton.FastShotScript 
-	local script = Instance.new('LocalScript', SpeedShotButton)
-
-	local FFSpeed = Instance.new("SpeedShotButton")
-	local FFSpeedText = Instance.new("Speedshot test")
-	
-	FFSpeed.MouseButton1Down:connect(function()
-		local replicationstorage = game.ReplicatedStorage
-	
-		while wait(5) do
-	
-			for i, v in pairs(replicationstorage.Weapons:GetDescendants()) do
-				if v.Name == "Auto" then
-					v.Value = true
-				end
-				if v.Name == "FireRate" then
-					v.Value = 0.02
-				end
-			end
-	
-		end
-	end)
-	
-end
-coroutine.wrap(RGFX_fake_script)()
-local function RFJBJWE_fake_script() -- SilentAimbutton.SilentAimScript 
+local function UMJTD_fake_script() -- SilentAimbutton.SilentAimScript 
 	local script = Instance.new('LocalScript', SilentAimbutton)
 
 	-- Script per il TextButton
@@ -424,73 +400,72 @@ local function RFJBJWE_fake_script() -- SilentAimbutton.SilentAimScript
 	
 	button.MouseButton1Click:Connect(onButtonClick)
 end
-coroutine.wrap(RFJBJWE_fake_script)()
-local function QZHSPVD_fake_script() -- InfiniteAmmoButton.InfAmmo Script 
-	local script = Instance.new('LocalScript', InfiniteAmmoButton)
-
-	local InfAmmo = Instance.new("InfiniteAmmoButton")
-	local AmmoText = Instance.new("InfAmmo")
-	
-	InfAmmo.MouseButton1Down:connect(function()
-		local replicationstorage = game.ReplicatedStorage
-	
-		while wait() do
-			game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client.Variables.ammocount.Value = 999
-			game:GetService("Players").LocalPlayer.PlayerGui.GUI.Client.Variables.ammocount2.Value = 999
-		end
-	end)
-	
-end
-coroutine.wrap(QZHSPVD_fake_script)()
-local function KNMTQ_fake_script() -- EspEnableButton.EspNewTest 
+coroutine.wrap(UMJTD_fake_script)()
+local function VRTYGD_fake_script() -- EspEnableButton.LocalScript 
 	local script = Instance.new('LocalScript', EspEnableButton)
 
-	local EspText = Instance.new("esp enable")
-	local TeamText = Instance.new("esp enable")
-	local TeamCheck2 = Instance.new("EspEnableButton")
-	local TeamText2 = Instance.new("esp enable")
-	local EspEnable = Instance.new("EspEnableButton")
-	local TeamCheck = Instance.new("EspEnableButton")
+	local Arsenalhaxx = Instance.new("Galactic HUB arsenal script")
+	local MainFrame = Instance.new("Frame")
+	local RGB = Instance.new("Frame")
+	local MainTitle = Instance.new("esp enable")
+	local ESP = Instance.new("EspEnableButton")
 	
-	TeamCheck.MouseButton1Down:connect(function()
-		if activated == false then
-			activated = true
-			TeamCheck.Image = "http://www.roblox.com/asset/?id=1264515756"
-		else do
-				activated = false
-				TeamCheck.Image = "http://www.roblox.com/asset/?id=1264513374"
-	
+	ESP.MouseButton1Click:connect(function()
+		local espEnabled = false
+		local function toggleESP()
+			espEnabled = not espEnabled
+			if espEnabled then
+				createESP()
+			else
+				removeESP()
 			end
 		end
-	end)
 	
-	TeamCheck2.MouseButton1Down:connect(function()
-		if _G.TeamCheckOn == false then
-			_G.TeamCheckOn = true
-			TeamCheck2.Image = "http://www.roblox.com/asset/?id=1264515756"
-		else do
-				_G.TeamCheckOn = false
-				TeamCheck2.Image = "http://www.roblox.com/asset/?id=1264513374"
+		ESP.MouseButton1Click:Connect(toggleESP)
 	
-			end
+		function createESP()
+			-- Your ESP logic goes here
 		end
-	end)
 	
-	EspEnable.MouseButton1Down:connect(function()
-		if toggled == false then
-			toggled = true
-			EspEnable.Image = "http://www.roblox.com/asset/?id=1264515756"
-		else do
-				toggled = false
-				EspEnable.Image = "http://www.roblox.com/asset/?id=1264513374"
-	
-			end
+		function removeESP()
+			-- Logic to remove ESP from players
 		end
+	
+		toggleESP()
 	end)
+	
+	function SCRIPT_JZPL83_FAKESCRIPT() -- Xs2.LocalScript 
+		local script = Instance.new('LocalScript')
+		script.Parent = RGB
+		repeat
+			for hue = 0, 1, .01 do
+				script.Parent.Parent.RGB.BackgroundColor3 = Color3.fromHSV(hue, 1, 1)
+				wait(0.3)
+			end
+			for hue = 1, 0 -.01 do
+				script.Parent.Parent.RGB.BackgroundColor3 = Color3.fromHSV(hue, 1, 1)
+				wait(0.3)
+			end
+		until nil
+	
+	end
+	coroutine.resume(coroutine.create(SCRIPT_JZPL83_FAKESCRIPT))
+	
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Galaxy Arsenal Test Script";
+		Text = "Thanks for testing the script";
+		Duration = 15;
+	})
+	wait(2)
+	game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Credits";
+		Text = "Made by Galaxy Owner (Shadow)";
+		Duration = 15;
+	})
 	
 end
-coroutine.wrap(KNMTQ_fake_script)()
-local function TJSB_fake_script() -- Closed.LocalScript 
+coroutine.wrap(VRTYGD_fake_script)()
+local function MUUQ_fake_script() -- Closed.LocalScript 
 	local script = Instance.new('LocalScript', Closed)
 
 	-- LocalScript inside the TextButton
@@ -527,8 +502,8 @@ local function TJSB_fake_script() -- Closed.LocalScript
 	UserInputService.InputBegan:Connect(onKeyPress)
 	
 end
-coroutine.wrap(TJSB_fake_script)()
-local function DEIB_fake_script() -- Frame.drag script 
+coroutine.wrap(MUUQ_fake_script)()
+local function GXYCSS_fake_script() -- Frame.drag script 
 	local script = Instance.new('LocalScript', Frame)
 
 	local UserInputService = game:GetService("UserInputService")
@@ -576,4 +551,4 @@ local function DEIB_fake_script() -- Frame.drag script
 	end)
 	
 end
-coroutine.wrap(DEIB_fake_script)()
+coroutine.wrap(GXYCSS_fake_script)()
